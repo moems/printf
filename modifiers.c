@@ -7,9 +7,9 @@
  *           for a given number specifier.
  * @flags: Flag modifiers.
  * @wid: A width modifier.
- *
  * Return: The number of bytes stored to the buffer.
  */
+
 unsigned int print_width(buffer_t *output, unsigned int printed,
 		unsigned char flags, int wid)
 {
@@ -18,7 +18,7 @@ unsigned int print_width(buffer_t *output, unsigned int printed,
 
 	if (NEG_FLAG == 0)
 	{
-		for (wid -= printed; wid > 0;)
+		for (wid -= printed; wid > 0; wid--)
 			ret += _memcpy(output, &width, 1);
 	}
 
@@ -32,9 +32,9 @@ unsigned int print_width(buffer_t *output, unsigned int printed,
  * @wid: A width modifier.
  * @prec: A precision modifier.
  * @size: The size of the string.
- *
  * Return: The number of bytes stored to the buffer.
  */
+
 unsigned int print_string_width(buffer_t *output,
 		unsigned char flags, int wid, int prec, int size)
 {
@@ -58,9 +58,9 @@ unsigned int print_string_width(buffer_t *output,
  *           for a given specifier.
  * @flags: Flag modifiers.
  * @wid: A width modifier.
- *
  * Return: The number of bytes stored to the buffer.
  */
+
 unsigned int print_neg_width(buffer_t *output, unsigned int printed,
 		unsigned char flags, int wid)
 {
