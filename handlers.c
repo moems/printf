@@ -7,7 +7,6 @@
  * Return: If flag characters are matched - a corresponding value.
  *         Otherwise
  */
-
 unsigned char handle_flags(const char *flag, char *index)
 {
 	int i, j;
@@ -78,7 +77,6 @@ unsigned char handle_length(const char *modifier, char *index)
 int handle_width(va_list args, const char *modifier, char *index)
 {
 	int value = 0;
-
 	while ((*modifier >= '0' && *modifier <= '9') || (*modifier == '*'))
 	{
 		(*index)++;
@@ -95,7 +93,6 @@ int handle_width(va_list args, const char *modifier, char *index)
 		value += (*modifier - '0');
 		modifier++;
 	}
-
 	return (value);
 }
 
@@ -109,14 +106,12 @@ int handle_width(va_list args, const char *modifier, char *index)
  *         If the precision modifier is empty, zero, or negative.
  *         Otherwise - -
  */
-
 int handle_precision(va_list args, const char *modifier, char *index)
 {
 	int value = 0;
 
 	if (*modifier != '.')
 		return (-1);
-
 	modifier++;
 	(*index)++;
 
@@ -127,7 +122,6 @@ int handle_precision(va_list args, const char *modifier, char *index)
 			(*index)++;
 		return (0);
 	}
-
 	while ((*modifier >= '0' && *modifier <= '9') ||
 		   (*modifier == '*'))
 	{
@@ -156,7 +150,6 @@ int handle_precision(va_list args, const char *modifier, char *index)
  * Return: If a conversion function is matched - a pointer to the function.
  *         Otherwise - NULL.
  */
-
 unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *,
 		unsigned char, int, int, unsigned char)
 {
